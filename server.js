@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var axios = require('axios')
-const { insta } = require('./X0/ig.js')
+const { insta } = require('./apis/ig.js')
 const http = require('http');
 const port = process.env.PORT || 3000;
 

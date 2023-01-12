@@ -6,7 +6,7 @@ const http = require('http');
 const port = process.env.PORT || 3000;
 
 
-app.get("/insta", function (req, res)  {
+app.get("/api/insta", function (req, res)  {
   console.log("request coming in...");
   insta(`${req.query.url}`).then(({ creator , url }) => {
                     result = {

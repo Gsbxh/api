@@ -23,6 +23,20 @@ app.get("/api/insta", function (req, res)  {
 
  
 
+app.get("/", function (req, res)  {
+
+result = {
+                      "status" : "true" ,
+                      "creator" : "Viper-X"
+                    }
+                      res.status(200).json( result );
+
+
+
+})
+
+
+
 const server = http.createServer(app);
 server.listen(port);
 

@@ -7,10 +7,11 @@ const port = process.env.PORT || 3000;
 
 
 app.get("/api/insta", function (req, res)  {
-  console.log("request coming in...");
+  //console.log("request coming in...");
+  try {
   insta(`${req.query.url}`).then(({ creator , url }) => {
                     result = {
-                      "status" : "true" ,
+                      "status" : "200" ,
                       "creator" : creator,
                       "media" : {
                       "url" : url 
@@ -19,6 +20,17 @@ app.get("/api/insta", function (req, res)  {
                       res.status(200).json( result );
   
                   })
+                  } catch {
+                  result = {
+                      "status" : "200" ,
+                      "creator" : "ᴠɪᴘᴇʀ-x",
+                      "media" : {
+                      "url" : "ʟɪɴᴋ ᴇʀʀᴏʀ" 
+                      }
+                    }
+                      res.status(200).json( result );
+                  }
+                  
 })
 
  
@@ -39,4 +51,3 @@ result = {
 
 const server = http.createServer(app);
 server.listen(port);
-
